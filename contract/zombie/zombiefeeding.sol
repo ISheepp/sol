@@ -29,6 +29,7 @@ contract ZombieFeeding is ZombieFactory {
     _targetDna = _targetDna % dnaModulus;
     uint newDna = (myZombie.dna + _targetDna) / 2;
     if (keccak256(_species) == keccak256("kitty")) {
+      // 猫zombie的dna最后两位是99
       newDna = newDna - newDna % 100 + 99;
     }
     _createZombie("NoName", newDna);
