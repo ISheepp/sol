@@ -1,7 +1,10 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.4.19;
 
-contract ZombieFactory {
+import "./ownable.sol";
+
+// 继承Ownable合约 所有被onlyOwner修饰符修饰的函数都只能被owner调用
+contract ZombieFactory is Ownable {
     // 事件
     event NewZombie(uint zombieId, string name, uint dna);
 
