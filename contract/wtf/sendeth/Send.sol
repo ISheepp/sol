@@ -25,4 +25,12 @@ contract sendETH {
             revert CallFailed();
         }
     }
+
+    // transfer()
+    function sendByTransfer(address payable _targetAddress, uint256 _amount)
+        external
+        payable
+    {
+        _targetAddress.transfer(_amount);
+    }
 }
